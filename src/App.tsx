@@ -103,13 +103,13 @@ export default function App() {
     <div className="bg-[#020617] text-slate-100 antialiased selection:bg-amber-400/20">
       {/* Noise texture */}
       <div className="pointer-events-none fixed inset-0 z-[1] opacity-[0.03] mix-blend-soft-light" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
-      
+
       {/* Header */}
       <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           <a href="#" className="flex items-center gap-3">
             <div className="relative h-10 w-10 overflow-hidden rounded-xl bg-gradient-to-br from-amber-400 to-orange-500 shadow-lg shadow-amber-500/20">
-              <img src="/images/logo.png" alt="Big Fly" className="h-full w-full object-contain p-1.5 mix-blend-luminosity" />
+              <img src="/images/logo.svg" alt="Big Fly" width={40} height={40} loading="eager" decoding="async" className="h-full w-full object-contain p-1.5 mix-blend-luminosity" />
             </div>
             <div className="leading-tight">
               <div className="font-bold tracking-tight text-white">BIG FLY</div>
@@ -118,7 +118,7 @@ export default function App() {
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
-            {["About","Services","Capabilities","Industries","Contact"].map((item)=>(
+            {["About", "Services", "Capabilities", "Industries", "Contact"].map((item) => (
               <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-medium text-slate-300 transition hover:text-white">
                 {item}
               </a>
@@ -134,17 +134,17 @@ export default function App() {
             </a>
           </div>
 
-          <button onClick={()=>setMobileOpen(!mobileOpen)} className="lg:hidden rounded-xl bg-white/10 p-2.5 text-white">
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden rounded-xl bg-white/10 p-2.5 text-white">
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>
         </div>
 
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div initial={{ height:0, opacity:0 }} animate={{ height:"auto", opacity:1 }} exit={{ height:0, opacity:0 }} className="lg:hidden border-t border-white/10 bg-slate-950">
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="lg:hidden border-t border-white/10 bg-slate-950">
               <div className="space-y-1 px-6 py-4">
-                {["About","Services","Capabilities","Industries","Contact"].map(item=>(
-                  <a key={item} onClick={()=>setMobileOpen(false)} href={`#${item.toLowerCase()}`} className="block rounded-lg px-3 py-2 text-slate-200 hover:bg-white/5">{item}</a>
+                {["About", "Services", "Capabilities", "Industries", "Contact"].map(item => (
+                  <a key={item} onClick={() => setMobileOpen(false)} href={`#${item.toLowerCase()}`} className="block rounded-lg px-3 py-2 text-slate-200 hover:bg-white/5">{item}</a>
                 ))}
               </div>
             </motion.div>
@@ -155,14 +155,14 @@ export default function App() {
       {/* Hero */}
       <section ref={heroRef} className="relative isolate overflow-hidden pt-28">
         <motion.div style={{ y }} className="absolute inset-0 -z-10">
-          <img src={heroImg} alt="Factory" className="h-full w-full object-cover" />
+          <img src={heroImg} alt="Factory" loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/85 to-[#020617]" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(251,191,36,0.15),transparent_60%)]" />
         </motion.div>
 
         <div className="mx-auto max-w-7xl px-6 pb-24 pt-16 lg:px-8 lg:pb-32 lg:pt-24">
           <div className="grid items-center gap-16 lg:grid-cols-2">
-            <motion.div initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} transition={{ duration:0.8 }} className="relative z-10">
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative z-10">
               <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-200 backdrop-blur">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
                 Made in Aba • Exporting Across Africa
@@ -177,7 +177,7 @@ export default function App() {
                 <a href="#contact" className="group relative overflow-hidden rounded-2xl bg-amber-400 px-7 py-4 text-base font-bold text-slate-900 shadow-2xl shadow-amber-500/30 transition hover:translate-y-[-2px]">
                   <span className="relative z-10 flex items-center gap-2">
                     Start Your Project
-                    <svg className="transition-transform group-hover:translate-x-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    <svg className="transition-transform group-hover:translate-x-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-amber-300 to-orange-400 opacity-0 transition group-hover:opacity-100" />
                 </a>
@@ -187,7 +187,7 @@ export default function App() {
               </div>
 
               <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-4">
-                {stats.map((s)=>(
+                {stats.map((s) => (
                   <div key={s.label} className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur">
                     <div className="text-3xl font-black text-white">{s.value}{s.suffix}</div>
                     <div className="mt-1 text-xs uppercase tracking-wide text-slate-400">{s.label}</div>
@@ -198,7 +198,7 @@ export default function App() {
 
             <motion.div style={{ opacity }} className="relative">
               <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-slate-800 to-slate-900 shadow-2xl">
-                <img src={factoryImg} alt="Factory floor" className="h-full w-full object-cover opacity-80 mix-blend-luminosity" />
+                <img src={factoryImg} alt="Factory floor" loading="lazy" decoding="async" className="h-full w-full object-cover opacity-80 mix-blend-luminosity" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <div className="rounded-2xl border border-white/10 bg-slate-900/80 p-5 backdrop-blur-xl">
@@ -221,7 +221,7 @@ export default function App() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <p className="text-center text-xs uppercase tracking-widest text-slate-500">Trusted by leading brands across Nigeria & West Africa</p>
           <div className="mt-6 grid grid-cols-2 items-center gap-8 opacity-60 sm:grid-cols-4 lg:grid-cols-6">
-            {["NESTLÉ","DANGOTE","UNILEVER","PZ CUSSONS","CHI","BUA"].map(b=>(
+            {["NESTLÉ", "DANGOTE", "UNILEVER", "PZ CUSSONS", "CHI", "BUA"].map(b => (
               <div key={b} className="text-center text-lg font-black tracking-wider text-slate-600">{b}</div>
             ))}
           </div>
@@ -234,7 +234,7 @@ export default function App() {
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <div className="relative">
               <div className="absolute -inset-4 rounded-[3rem] bg-gradient-to-br from-amber-500/20 to-orange-600/20 blur-2xl" />
-              <img src={aboutImg} alt="About" className="relative rounded-[2rem] border border-white/10 shadow-2xl" />
+              <img src={aboutImg} alt="About" loading="lazy" decoding="async" className="relative rounded-[2rem] border border-white/10 shadow-2xl" />
               <div className="absolute -bottom-8 -right-8 hidden rounded-2xl border border-white/10 bg-slate-900/90 p-6 shadow-xl backdrop-blur lg:block">
                 <div className="text-5xl font-black text-amber-400">15+</div>
                 <div className="text-sm text-slate-300">Years building Nigeria's manufacturing future</div>
@@ -248,11 +248,11 @@ export default function App() {
               </p>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 {[
-                  {title:"End-to-End",desc:"Design, tooling, production & logistics under one roof."},
-                  {title:"Speed",desc:"Rapid prototyping to mass production in weeks, not months."},
-                  {title:"Quality",desc:"In-process checks, lab testing & compliance documentation."},
-                  {title:"Sustainability",desc:"Recycled materials, energy-efficient lines & waste reduction."},
-                ].map(f=>(
+                  { title: "End-to-End", desc: "Design, tooling, production & logistics under one roof." },
+                  { title: "Speed", desc: "Rapid prototyping to mass production in weeks, not months." },
+                  { title: "Quality", desc: "In-process checks, lab testing & compliance documentation." },
+                  { title: "Sustainability", desc: "Recycled materials, energy-efficient lines & waste reduction." },
+                ].map(f => (
                   <div key={f.title} className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.07] to-transparent p-5">
                     <div className="text-base font-semibold text-white">{f.title}</div>
                     <p className="mt-1 text-sm text-slate-400">{f.desc}</p>
@@ -272,16 +272,16 @@ export default function App() {
             <p className="mt-4 text-lg text-slate-400">From concept to container — we scale with you.</p>
           </div>
           <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s,i)=>(
-              <motion.div key={s.title} initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ delay:i*0.05 }} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-8 transition hover:border-amber-400/40">
+            {services.map((s, i) => (
+              <motion.div key={s.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-900 to-slate-950 p-8 transition hover:border-amber-400/40">
                 <div className="absolute right-0 top-0 h-32 w-32 translate-x-8 -translate-y-8 rounded-full bg-amber-500/10 blur-2xl transition group-hover:bg-amber-500/20" />
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 ring-1 ring-white/10">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d={s.icon} strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d={s.icon} strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </div>
                 <h3 className="mt-5 text-xl font-bold text-white">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.desc}</p>
                 <a href="#contact" className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-amber-300 transition group-hover:gap-2">
-                  Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  Learn more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
                 </a>
               </motion.div>
             ))}
@@ -296,15 +296,15 @@ export default function App() {
             <div>
               <h2 className="text-4xl font-black tracking-tight text-white sm:text-5xl">Capabilities that deliver.</h2>
               <p className="mt-4 max-w-xl text-lg text-slate-400">Modern equipment, skilled technicians and lean processes ensure consistent output at competitive costs.</p>
-              
+
               <div className="mt-10 space-y-4">
                 {[
-                  {k:"Injection Molding",v:"80 – 650 ton machines, multi-cavity tools"},
-                  {k:"Metal Fabrication",v:"Laser cutting up to 20mm, CNC bending & welding"},
-                  {k:"Printing & Labeling",v:"Offset, flexo & digital for packaging"},
-                  {k:"Assembly Lines",v:"Semi-automated lines with poka-yoke"},
-                  {k:"Tool Room",v:"In-house mold maintenance & rapid repairs"},
-                ].map(item=>(
+                  { k: "Injection Molding", v: "80 – 650 ton machines, multi-cavity tools" },
+                  { k: "Metal Fabrication", v: "Laser cutting up to 20mm, CNC bending & welding" },
+                  { k: "Printing & Labeling", v: "Offset, flexo & digital for packaging" },
+                  { k: "Assembly Lines", v: "Semi-automated lines with poka-yoke" },
+                  { k: "Tool Room", v: "In-house mold maintenance & rapid repairs" },
+                ].map(item => (
                   <div key={item.k} className="flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
                     <div className="mt-1 h-2 w-2 rounded-full bg-amber-400" />
                     <div>
@@ -317,10 +317,10 @@ export default function App() {
             </div>
 
             <div className="relative">
-              <img src={workersImg} alt="Workers" className="h-full w-full rounded-[2rem] border border-white/10 object-cover" />
+              <img src={workersImg} alt="Workers" loading="lazy" decoding="async" className="h-full w-full rounded-[2rem] border border-white/10 object-cover" />
               <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 grid gap-3 sm:grid-cols-3">
-                {["ISO-aligned","24/7 Ops","Export Ready"].map(t=>(
+                {["ISO-aligned", "24/7 Ops", "Export Ready"].map(t => (
                   <div key={t} className="rounded-2xl border border-white/15 bg-slate-900/80 px-4 py-3 text-center text-sm font-semibold text-white backdrop-blur">
                     {t}
                   </div>
@@ -337,7 +337,7 @@ export default function App() {
           <div className="flex flex-wrap items-center justify-between gap-6">
             <h3 className="text-2xl font-bold text-white">Industries we serve</h3>
             <div className="flex flex-wrap gap-3">
-              {industries.map(i=>(
+              {industries.map(i => (
                 <span key={i} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-300">{i}</span>
               ))}
             </div>
@@ -355,12 +355,12 @@ export default function App() {
             <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-gradient-to-b from-amber-400/0 via-amber-400/40 to-amber-400/0 lg:block" />
             <div className="space-y-12">
               {[
-                {step:"01",title:"Discover & Design",desc:"We review specs, propose materials and create DFM feedback."},
-                {step:"02",title:"Prototype & Validate",desc:"Rapid prototypes, functional testing and client approval."},
-                {step:"03",title:"Tooling & Pilot",desc:"Tool build, first-off samples and process validation."},
-                {step:"04",title:"Scale & Deliver",desc:"Mass production, QC, packaging and logistics coordination."},
-              ].map((p,i)=>(
-                <div key={p.step} className={`relative grid items-center gap-8 lg:grid-cols-2 ${i%2===1?'lg:[&>*:first-child]:order-2':''}`}>
+                { step: "01", title: "Discover & Design", desc: "We review specs, propose materials and create DFM feedback." },
+                { step: "02", title: "Prototype & Validate", desc: "Rapid prototypes, functional testing and client approval." },
+                { step: "03", title: "Tooling & Pilot", desc: "Tool build, first-off samples and process validation." },
+                { step: "04", title: "Scale & Deliver", desc: "Mass production, QC, packaging and logistics coordination." },
+              ].map((p, i) => (
+                <div key={p.step} className={`relative grid items-center gap-8 lg:grid-cols-2 ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                   <div className="relative">
                     <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-8">
                       <div className="text-6xl font-black text-white/5">{p.step}</div>
@@ -386,7 +386,7 @@ export default function App() {
             </div>
             <div className="relative">
               <AnimatePresence mode="wait">
-                <motion.div key={activeTestimonial} initial={{ opacity:0, y:20 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0, y:-20 }} transition={{ duration:0.5 }} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-10">
+                <motion.div key={activeTestimonial} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5 }} className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-slate-900 to-slate-950 p-10">
                   <div className="text-5xl text-amber-400/30">“</div>
                   <p className="mt-2 text-xl leading-relaxed text-slate-200">{testimonials[activeTestimonial].quote}</p>
                   <div className="mt-6">
@@ -396,8 +396,8 @@ export default function App() {
                 </motion.div>
               </AnimatePresence>
               <div className="mt-4 flex gap-2">
-                {testimonials.map((_,i)=>(
-                  <button key={i} onClick={()=>setActiveTestimonial(i)} className={`h-2 rounded-full transition-all ${i===activeTestimonial?'w-8 bg-amber-400':'w-2 bg-white/20'}`} />
+                {testimonials.map((_, i) => (
+                  <button key={i} onClick={() => setActiveTestimonial(i)} className={`h-2 rounded-full transition-all ${i === activeTestimonial ? 'w-8 bg-amber-400' : 'w-2 bg-white/20'}`} />
                 ))}
               </div>
             </div>
@@ -427,11 +427,11 @@ export default function App() {
             <div>
               <h2 className="text-4xl font-black text-white sm:text-5xl">Let's build together</h2>
               <p className="mt-4 text-lg text-slate-400">Tell us about your project. Our engineering team will respond within 1 business day.</p>
-              
+
               <div className="mt-10 space-y-6">
                 <div className="flex gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                   </div>
                   <div>
                     <div className="font-semibold text-white">Head Office & Factory</div>
@@ -440,7 +440,7 @@ export default function App() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                   </div>
                   <div>
                     <div className="font-semibold text-white">Phone</div>
@@ -449,7 +449,7 @@ export default function App() {
                 </div>
                 <div className="flex gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-amber-300"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg>
                   </div>
                   <div>
                     <div className="font-semibold text-white">Email</div>
@@ -475,30 +475,30 @@ export default function App() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <div>
                       <label className="text-sm font-medium text-slate-300">Full Name</label>
-                      <input required value={formState.name} onChange={e=>setFormState({...formState, name:e.target.value})} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="Ada Okoro" />
+                      <input required value={formState.name} onChange={e => setFormState({ ...formState, name: e.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="Ada Okoro" />
                     </div>
                     <div>
                       <label className="text-sm font-medium text-slate-300">Work Email</label>
-                      <input required type="email" value={formState.email} onChange={e=>setFormState({...formState, email:e.target.value})} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="ada@company.com" />
+                      <input required type="email" value={formState.email} onChange={e => setFormState({ ...formState, email: e.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="ada@company.com" />
                     </div>
                   </div>
                   <div>
                     <label className="text-sm font-medium text-slate-300">Company</label>
-                    <input value={formState.company} onChange={e=>setFormState({...formState, company:e.target.value})} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="Company Ltd" />
+                    <input value={formState.company} onChange={e => setFormState({ ...formState, company: e.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="Company Ltd" />
                   </div>
                   <div>
                     <label className="text-sm font-medium text-slate-300">Project Details</label>
-                    <textarea required rows={5} value={formState.message} onChange={e=>setFormState({...formState, message:e.target.value})} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="Tell us about materials, quantities, timeline..." />
+                    <textarea required rows={5} value={formState.message} onChange={e => setFormState({ ...formState, message: e.target.value })} className="mt-2 w-full rounded-xl border border-white/10 bg-slate-950 px-4 py-3 text-white placeholder-slate-500 outline-none ring-amber-400/30 focus:border-amber-400/50 focus:ring-4" placeholder="Tell us about materials, quantities, timeline..." />
                   </div>
                   <button type="submit" className="group relative overflow-hidden rounded-2xl bg-amber-400 px-6 py-4 text-base font-bold text-slate-900 shadow-lg shadow-amber-500/25 transition hover:translate-y-[-1px]">
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Send Request
-                      <svg className="transition-transform group-hover:translate-x-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                      <svg className="transition-transform group-hover:translate-x-0.5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" /></svg>
                     </span>
                   </button>
                   <AnimatePresence>
                     {submitted && (
-                      <motion.div initial={{ opacity:0, y:10 }} animate={{ opacity:1, y:0 }} exit={{ opacity:0 }} className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
+                      <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-200">
                         Thanks! Our team will reach out shortly.
                       </motion.div>
                     )}
@@ -528,13 +528,13 @@ export default function App() {
             <div>
               <div className="text-sm font-semibold uppercase tracking-wider text-slate-200">Company</div>
               <ul className="mt-4 space-y-2 text-sm text-slate-400">
-                {["About","Capabilities","Sustainability","Careers"].map(l=><li key={l}><a href="#" className="hover:text-white">{l}</a></li>)}
+                {["About", "Capabilities", "Sustainability", "Careers"].map(l => <li key={l}><a href="#" className="hover:text-white">{l}</a></li>)}
               </ul>
             </div>
             <div>
               <div className="text-sm font-semibold uppercase tracking-wider text-slate-200">Services</div>
               <ul className="mt-4 space-y-2 text-sm text-slate-400">
-                {["Injection Molding","Metal Fabrication","Packaging","Assembly"].map(l=><li key={l}><a href="#" className="hover:text-white">{l}</a></li>)}
+                {["Injection Molding", "Metal Fabrication", "Packaging", "Assembly"].map(l => <li key={l}><a href="#" className="hover:text-white">{l}</a></li>)}
               </ul>
             </div>
             <div>
