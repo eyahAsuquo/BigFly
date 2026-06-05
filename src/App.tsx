@@ -167,7 +167,7 @@ export default function App() {
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
                 Made in Aba • Exporting Across Africa
               </div>
-              <h1 className="mt-6 text-4xl font-black tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl drop-shadow-lg">
+              <h1 className="mt-6 text-4xl font-black tracking-tight leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl drop-shadow-lg">
                 Precision <br className="sm:hidden" />
                 Manufacturing. <br className="sm:hidden" />
                 <span className="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">Built for Scale.</span>
