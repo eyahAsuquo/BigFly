@@ -167,10 +167,10 @@ export default function App() {
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
                 Made in Aba • Exporting Across Africa
               </div>
-              <h1 className="mt-6 text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+              <h1 className="mt-6 text-3xl font-black tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
                 Precision Manufacturing. <span className="bg-gradient-to-r from-amber-300 to-orange-400 bg-clip-text text-transparent">Built for Scale.</span>
               </h1>
-              <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-300">
+              <p className="mt-6 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-slate-300">
                 Big Fly Manufacturing Company Limited is Nigeria's trusted partner for plastic molding, metal fabrication, packaging and custom production. From prototype to millions of units — we deliver quality, speed and reliability.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
